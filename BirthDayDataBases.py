@@ -3,8 +3,8 @@ import os
 
 
 def newLine():
-    nom = input("name of the personn ?")
-    date = input("day of birth ?")
+    nom = input("name of the personn : ")
+    date = input("day of birth (DD/MM/YYYY) : ")
     cursor.execute("""
     INSERT INTO users(name, date) VALUES(?, ?)""", (nom, date))
     #cursor.close()
@@ -43,10 +43,10 @@ clear = lambda: os.system('cls')
 choice=0
 while choice!='4':
     print("what do you want to do ?")
-    print("1/ add anniv")
-    print("2/ show anniv")
-    print("3/ reset")
-    print("4/ quit")
+    print("1/ add birthday")
+    print("2/ show birthday")
+    print("3/ reset database")
+    print("4/ save and quit")
 
     choice = input("choice")
 
@@ -62,10 +62,4 @@ while choice!='4':
     else:
         print("put a good number")
 
-
 conn.commit()
-
-
-
-
-print("salut")
